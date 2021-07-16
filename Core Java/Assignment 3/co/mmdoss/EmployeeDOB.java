@@ -52,8 +52,11 @@ class MyHashMap{
 		Set<DateClass> keySet = hashmap.keySet();
 		boolean flag=false;
 		for (DateClass dateClass : keySet) {
-			if(dateClass.equals(key)==true)
+			if(dateClass.equals(key)==true) {
 				flag=true;
+				break;
+			}
+				
 		}
 		if(flag==false) {
 			hashmap.put(key, value);
