@@ -122,14 +122,14 @@ class Parked_CarOwnerList{
 			floor=(temp/80);
 			temp=temp%80;
 			if(temp==0) {
-				System.out.println("Car is in : Floor no : "+floor+" Section : "+2+" Slot : "+4);
+				System.out.println("Car is in : Floor no : "+floor+" Section : "+4+" Slot : "+20);
 			}
 			else{
 				floor+=1;
 				section=(temp/20);
 				temp=temp%20;
 				if(temp==0) {
-					System.out.println("Car is in : Floor no : "+floor+" Section : "+section+" Slot : "+4);
+					System.out.println("Car is in : Floor no : "+floor+" Section : "+section+" Slot : "+20);
 				}
 				else {
 					section+=1;
@@ -172,6 +172,6 @@ public class ParkingMgmt {
 		
 		Parked_CarOwnerList.view();
 		
-		Parked_CarOwnerList.get_parked_car_location("0016");
+		Parked_CarOwnerList.get_parked_car_location("0001");
 	}
 }
