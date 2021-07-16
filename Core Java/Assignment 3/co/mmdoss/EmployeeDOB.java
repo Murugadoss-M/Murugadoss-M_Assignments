@@ -45,29 +45,50 @@ class DateClass{
 	
 	
 }
-public class EmployeeDOB {
-
-	public static void main(String[] args) throws Exception {
-		
-		Map<DateClass,String> hashmap=new HashMap<>();
-		
-		Date d=new SimpleDateFormat("dd-MM-yyyy").parse("24-11-1998");
-		DateClass key1=new DateClass(d);
-		hashmap.put(key1, "Doss");
-		
-		d=new SimpleDateFormat("dd-MM-yyyy").parse("24-10-1998");
-		DateClass key2=new DateClass(d);
-		hashmap.put(key2, "Muruga");
-		
-		d=new SimpleDateFormat("dd-MM-yyyy").parse("24-11-1999");
-		DateClass key3=new DateClass(d);
-		hashmap.put(key3, "Muthu");
-		
+class MyHashMap{
+	private static Map<DateClass,String> hashmap=new HashMap<>();
+	
+	public static void add(DateClass key,String value) {
+		Set<DateClass> keySet = hashmap.keySet();
+		boolean flag=false;
+		for (DateClass dateClass : keySet) {
+			if(dateClass.equals(key)==true)
+				flag=true;
+		}
+		if(flag==false) {
+			hashmap.put(key, value);
+		}
+		else {
+			System.out.println("Insertion aborted");
+		}
+	}
+	public static void view() {
 		Set<Entry<DateClass, String>> entrySet = hashmap.entrySet();
 		for (Entry<DateClass, String> entry : entrySet) {
 			System.out.println(entry.getKey()+" "+entry.getValue() );
 		}
+	}
+}
+public class EmployeeDOB {
+
+	public static void main(String[] args) throws Exception {
 		
+			
+		Date d=new SimpleDateFormat("dd-MM-yyyy").parse("24-11-1998");
+		DateClass key1=new DateClass(d);
+		MyHashMap.add(key1, "Doss");
+		
+		d=new SimpleDateFormat("dd-MM-yyyy").parse("24-10-1998");
+		DateClass key2=new DateClass(d);
+		MyHashMap.add(key2, "Muruga");
+		
+		d=new SimpleDateFormat("dd-MM-yyyy").parse("24-11-1999");
+		DateClass key3=new DateClass(d);
+		MyHashMap.add(key3, "Muthu");
+		
+		//System.out.println(key1.equals(key3));
+		
+		MyHashMap.view();
 		
 	}
 
