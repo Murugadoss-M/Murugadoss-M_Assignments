@@ -105,18 +105,15 @@ class Parked_CarOwnerList{
 		
 	}
 	static void get_parked_car_location(String number) {
-		Integer key=null;
-		Set<Entry<Integer, Parked_CarOwner_Details>> entrySet = map.entrySet();
-		for (Entry<Integer, Parked_CarOwner_Details> entry : entrySet) {
-			if(number.equals(entry.getValue().getCarNO())) {
-				key=entry.getKey();
-				break;
+		try {
+			Integer key=null;
+			Set<Entry<Integer, Parked_CarOwner_Details>> entrySet = map.entrySet();
+			for (Entry<Integer, Parked_CarOwner_Details> entry : entrySet) {
+				if(number.equals(entry.getValue().getCarNO())) {
+					key=entry.getKey();
+					break;
+				}
 			}
-		}
-		if(key==null) {
-			System.out.println("Car doesn't exist");
-		}
-		else {
 			int floor,section,slot;
 			int temp=key;
 			floor=(temp/80);
@@ -137,7 +134,8 @@ class Parked_CarOwnerList{
 					System.out.println("Car is in : Floor no : "+floor+" Section : "+section+" Slot : "+slot);
 				}
 			}
-				
+		} catch (NullPointerException e) {
+			System.out.println("Car not found !!!!");
 		}
 	}
 	static void view() {
@@ -169,9 +167,11 @@ public class ParkingMgmt {
 		Parked_CarOwnerList.add_new_car(new Parked_CarOwner_Details("Doss", "Maruti", "0014", 12345, null));
 		Parked_CarOwnerList.add_new_car(new Parked_CarOwner_Details("Doss", "Maruti", "0015", 12345, null));
 		Parked_CarOwnerList.add_new_car(new Parked_CarOwner_Details("Doss", "Maruti", "0016", 12345, null));
+		Parked_CarOwnerList.add_new_car(new Parked_CarOwner_Details("Doss", "Maruti", "0017", 12345, null));
+		
 		
 		Parked_CarOwnerList.view();
 		
-		Parked_CarOwnerList.get_parked_car_location("0001");
+		Parked_CarOwnerList.get_parked_car_location("0018");
 	}
 }
