@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title>JavaScript Runner</title>
+    <script>
+        function BankAccount(accountNumber, accountHolderName, accountBalance) {
+            this.accountNumber = accountNumber;
+            this.accountHolderName = accountHolderName;
+            this.accountBalance = accountBalance;
+        }
+        var savings = new BankAccount(101, "mmdoss", 10000);
+        savings.isSalary = "true";
+        var current = new BankAccount(102, "dossmm", 15000);
+        current.odLimit = -2000;
+        BankAccount.prototype.withdraw = function (amount) {
+            if (this.hasOwnProperty("isSalary")) {
+                console.log("Savings Account");
+                if ((this.accountBalance - amount) >= 0) {
+                    this.accountBalance -= amount;
+                    console.log("Withdrawal Successful : " + this.accountBalance);
+                }
+                else {
+                    console.log("Withdrawal not possible");
+                }
+            }
+            if (this.hasOwnProperty("odLimit")) {
+                console.log("Current Account");
+                if ((this.accountBalance - amount) >= this.odLimit) {
+                    this.accountBalance -= amount;
+                    console.log("Withdrawal Successful : " + this.accountBalance);
+                }
+                else {
+                    console.log("Withdrawal not possible");
+                }
+            }
+        }
+        savings.withdraw(100);
+        current.withdraw(100);
+    </script>
+</head>
+
+</html>

@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <title>JavaScript Runner</title>
+    <script>
+        function isEven(arr) {
+            if (arr % 2 == 0) return true;
+            else return false;
+        }
+
+        function find(arr, func) {
+            for (let i = 0; i < arr.length; i++) {
+                var status = func(arr[i]);
+                if (status) {
+                    return arr[i];
+                }
+            }
+        }
+
+        console.log(find([1, 2, 3, 4, 5], isEven));
+        console.log(find([3, 5, 8, 4, 1], isEven));
+        console.log(find([1, 7, 3, 4, 5], isEven));
+
+    </script>
+</head>
+
+</html>

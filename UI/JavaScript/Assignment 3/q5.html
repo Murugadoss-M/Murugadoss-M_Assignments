@@ -1,0 +1,20 @@
+<html>
+
+<head>
+    <title>JavaScript Runner</title>
+    <script>
+        var obj = Object.create(null, {
+            firstName: { value: "mm" },
+            lastName: { value: "doss" }
+        });
+        console.log("First Name : " + obj.firstName);
+        console.log("Middle Name : " + obj.middleName);
+        console.log("Last Name : " + obj.lastName);
+        obj.middleName="m";
+        console.log("First Name : " + obj.firstName);
+        console.log("Middle Name : " + obj.middleName);
+        console.log("Last Name : " + obj.lastName);
+    </script>
+</head>
+
+</html>

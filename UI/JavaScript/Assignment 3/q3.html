@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <title>
+        JavaScript Runner
+    </title>
+    <script>
+        class Rectangle {
+            constructor(height, width) {
+                this.height = height;
+                this.width = width;
+            }
+        }
+
+        Rectangle.prototype.getArea = function(){
+            return this.height * this.width;
+        };
+
+        let rectangle1 = new Rectangle(4,5);
+        rectangle1.hieght=50;
+        console.log("Height : "+ rectangle1.height);
+        console.log("Width : "+ rectangle1.width);
+        console.log("Hieght : "+ rectangle1.hieght);
+        console.log("Area : "+rectangle1.getArea());
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

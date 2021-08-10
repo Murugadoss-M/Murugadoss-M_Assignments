@@ -1,0 +1,22 @@
+<html>
+
+<head>
+    <title>
+        JavaScript Runner
+    </title>
+    <script>
+        function map(arr, func) {
+            var result = [];
+            for (let i = 0; i < arr.length; i++) {
+                result.push(func(arr[i]));
+            }
+            return result;
+        }
+
+        console.log(map([1, 2, 3, 4, 5], Math.sqrt));
+        console.log(map([3, 5, 8, 4, 1], x => x * x));
+
+    </script>
+</head>
+
+</html>

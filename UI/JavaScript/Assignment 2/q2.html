@@ -1,0 +1,23 @@
+<html>
+
+<head>
+    <title>
+        JavaScript Runner
+    </title>
+    <script>
+        const compose = (a, b) => x => { return a(b(x)); };
+        const double = x => x * 2;
+        const square = x => x * x;
+
+        var ComposedValue = compose(square, double);
+
+        var ComposedValue1 = compose(double, square);
+
+        console.log(ComposedValue(2));
+        console.log(ComposedValue1(10));
+        console.log(ComposedValue(5));
+        console.log(ComposedValue1(2));
+    </script>
+</head>
+
+</html>
